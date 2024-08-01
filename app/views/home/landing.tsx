@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     paragraph: {
         color: '#FFF',
         zIndex: 2,
-        fontSize: 20,
+        fontSize: 18,
         textTransform: 'uppercase'
     },
     pressable: {

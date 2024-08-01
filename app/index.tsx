@@ -10,7 +10,7 @@ export default function Home() {
       <View style={styles.container}>
          <Image
             style={styles.image}
-            source="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg"
+            source=""
             placeholder={{ blurhash }}
             contentFit="cover"
             transition={1000}
