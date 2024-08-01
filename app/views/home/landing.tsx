@@ -3,9 +3,10 @@ import { Text, View, StyleSheet, Pressable } from 'react-native'
 import { LandingPageType } from '../types/app-platform-typings'
 import { Image } from 'expo-image'
 import { blurhash } from '@/app'
+import { router } from 'expo-router'
 const LandingPageItems: LandingPageType[] = [
     {
-        link: 'diet',
+        link: '/views/diet',
         src: '/assets/images/diet.jpg',
         isActive: false,
         name: 'diet'
@@ -23,6 +24,10 @@ function Landing() {
     const [getItmes, setItmes] = useState<LandingPageType[]>([])
 
 
+    const onNavigatePage = (link:string)=> {
+        router.push(link as any);
+    }
+    
 
     useEffect(() => {
 
@@ -37,13 +42,14 @@ function Landing() {
             {
                 getItmes.map(item => {
                     return (
-                        <Pressable  style={styles.pressable} key={item.name}>
+                        <Pressable  onPress={()=> onNavigatePage(item?.link)}  style={styles.pressable} key={item.name}>
                             <Image
                                 style={styles.image}
                                 source={item.src}
                                 placeholder={{ blurhash }}
                                 contentFit="cover"
                                 transition={1000}
+                            
                             />
                             <Text style={styles.paragraph}>{item.name}</Text>
                         </Pressable>

@@ -17,9 +17,19 @@ export default function RootLayout() {
 
 
   return (
-      <Stack>
+    <Stack screenOptions={{
+      header: (d)=> null,
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }}>
         <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+        <Stack.Screen name="view/diet" options={{ headerShown: true , title: 'Diet' }} />
+        <Stack.Screen name="+not-found" options={{ headerShown: false }} />
       </Stack>
   );
 }
